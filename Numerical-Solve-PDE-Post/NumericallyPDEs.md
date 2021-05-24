@@ -70,7 +70,7 @@ $$
 
 $$
 \begin{align*}
-& \text{The expression of } u(t,x)\text{ in 2D matrix: }\\
+& \text{The expression of } u(x,t)\text{ in 2D matrix: }\\
 \\
 & \begin{matrix}
 & 1 & 2&3& \cdots&n\\
@@ -85,7 +85,7 @@ $$
 &\text{The initial condition givien the cover the values for first columns}\\
 &\text{And the boundary condition cover the values for first and last rows}\\
 \\
-&\text{Now, the expression of }u(t,x) \text{ should be:} \\
+&\text{Now, the expression of }u(x,t) \text{ should be:} \\
 \\
 & \begin{matrix}
 & 1 & 2&3& \cdots&n\\

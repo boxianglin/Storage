@@ -52,5 +52,3 @@ print("Average spam confidence:",average)
 
 
 
-
-

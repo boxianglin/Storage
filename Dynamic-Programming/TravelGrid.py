@@ -35,8 +35,6 @@ def gridTravelMemo(m,n):
     return helper(m,n)
 
 
-
-
 def main():
     print(gridTravel(3,2))
     print(gridTravelMemo(3,2))

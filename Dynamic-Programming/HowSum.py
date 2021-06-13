@@ -29,6 +29,7 @@ def howSumMemo(targetSum, numbers):
                 result = curList + [cur]
                 memo[targetSum] = result
                 return memo[targetSum]
+
         memo[targetSum] = None
         return None
     return helper(targetSum,numbers)

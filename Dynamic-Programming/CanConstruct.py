@@ -1,5 +1,6 @@
 
-# Time: O(
+# Time: O(N^M * M) N^M calls but * M because each suffix computed each call
+# Space: O(M^2)
 def canConstruct(target, wordBank):
     #1 Base case that returns TRUE
     if target == "": return True
@@ -11,7 +12,8 @@ def canConstruct(target, wordBank):
                 return True
     return False
 
-
+# Time: O(N*M^2) M^2 = M keys * M subString Operations * N branches
+# Space: O(M^2)
 def canConstructMemo(target,wordBank):
     memo = {}
     def helper(target,wordbank):

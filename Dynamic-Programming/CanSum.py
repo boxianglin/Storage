@@ -43,9 +43,19 @@ def canSumMemo(targetSum, numbers):
         return False
     return helper(targetSum,numbers)
 
+# Time: O(MN)
+# Space: O(M)
+def canSumIte(targetSum, numbers):
+    table = [False]*(targetSum+1)
+    table[0] = True
+    for i in range(targetSum+1):
+        if table[i] is True:
+            goodScope = [num for num in numbers if i+num<= targetSum]
+            for num in goodScope: table[i+num] = True
+    return table[targetSum]
 
 def main():
-    print(canSum(7, (2, 3)))  # true
+    print(canSum(7, (2, 3)))  # true]
     print(canSum(7, (5, 3, 4, 7)))  # true
     print(canSum(7, (2, 4)))  # false
     print(canSum(8, (2, 3, 5)))  # true
@@ -56,6 +66,8 @@ def main():
     print(canSumMemo(7, (2, 4)))  # false
     # print(canSumMemo(8, (2, 3, 5)))  # true
     # print(canSumMemo(300, (7, 14)))  # false
+    print('------------')
+    print(canSumIte(7,(5,1,4,7)))
 
 ###############################
 if __name__ == "__main__":

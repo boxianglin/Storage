@@ -34,6 +34,19 @@ def howSumMemo(targetSum, numbers):
         return None
     return helper(targetSum,numbers)
 
+# Time: O(m*m*n)
+# Space: O(m^2)
+def howSumIte(target, numbers):
+    table = [None]*(target+1)
+    table[0] = []
+    for i in range(target+1):
+        if table[i] is not None:
+            scope = [num for num in numbers if i+num <= target]
+            for num in scope:
+                table[i+num] = table[i]+[num]
+    return table[target]
+
 print('brute Force',howSum(7,[2,3]))
 print('Memo',howSumMemo(7,[2,3]))
 print(howSumMemo(300,[7,14]))
+print('iterative',howSumIte(7,[2,3]))

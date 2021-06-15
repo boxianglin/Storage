@@ -30,5 +30,16 @@ def canConstructMemo(target,wordBank):
         return False
     return helper(target,wordBank)
 
+def canConsturctIte(target,wordBank):
+    table = [False]*(len(target)+1)
+    table[0] = True
+    for i in range(len(target)):
+        if table[i] is True:
+            for word in wordBank:
+                if target[i:i+len(word)] == word:
+                    table[i+len(word)] = True
+    return table[len(target)]
+
 print(canConstruct("abcdef", ["ab","abc","cd","def","abcd"])) #true
 print(canConstructMemo("abcdef", ["ab","abc","cd","def","abcd"])) #true
+print(canConsturctIte("abcdef", ["ab","abc","cd","def","abcd"])) #true

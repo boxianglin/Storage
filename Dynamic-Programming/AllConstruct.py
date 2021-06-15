@@ -30,6 +30,22 @@ def allconstructMemo(target, wordBank):
         return result
     return helper(target,wordBank)
 
+def allconstructIte(target, wordBank):
+    table = [[] for i in range(len(target) + 1)]
+    table[0] = [[]]
+    for i in range(len(target)):
+        for word in wordBank:
+            if target[i : i + len(word)] == word:
+                new_combinations = [combination + [word] for combination in table[i]]
+                print(table[i+len(word)],'---',new_combinations)
+                table[i + len(word)].extend(new_combinations)
+    return table[len(target)]
 
-print(allconstruct("purple",["purp","p","ur","le","purpl"]))
-print(allconstructMemo("purple",["purp","p","ur","le","purpl"]))
+# print(allconstruct("purple",["purp","p","ur","le","purpl"]))
+# print(allconstructMemo("purple",["purp","p","ur","le","purpl"]))
+print('result:',allconstructIte("purple",["purp","p","ur","le","purpl"]))
+a = [[['purp']]]
+b = [['p', 'ur', 'p']]
+a[0].extend(b)
+print(a[0])
+

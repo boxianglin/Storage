@@ -31,5 +31,18 @@ def countConsturctMemo(target,wordBank):
         return total
     return helper(target,wordBank)
 
+
+def CountConstructIte(target, wordBank):
+    table = [0]*(len(target)+1)
+    table[0] = 1
+    for i in range(len(target)):
+        if table[i] >= 1:
+            for word in wordBank:
+                if target[i:i+len(word)] == word:
+                    table[i+len(word)] += table[i]
+    return table[len(target)]
+
+
 print(countConstruct("purple", ["purp","p","ur","le","purpl"])) #2
 print(countConsturctMemo("purple", ["purp","p","ur","le","purpl"])) #2
+print(CountConstructIte("purple", ["purp","p","ur","le","purpl"])) #2

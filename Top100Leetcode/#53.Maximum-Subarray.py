@@ -12,3 +12,4 @@ class Solution:
 
 solution = Solution()
 print(solution.maxSubArray([-2,1,-3,4,-1,2,1,-5,4])) #6
+print(solution.maxSubArray([-3,-2,1])) #1
